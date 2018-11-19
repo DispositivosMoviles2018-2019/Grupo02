@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ec.edu.uce.vista.ingresar">
+
+    <EditText
+        android:id="@+id/txtPlaca"
+        android:layout_width="210dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginRight="158dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="Placa"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtMarca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginRight="158dp"
+        android:layout_marginBottom="41dp"
+        android:ems="10"
+        android:hint="Marca"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtCosto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlaca" />
+
+    <EditText
+        android:id="@+id/txtCosto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginRight="158dp"
+        android:ems="10"
+        android:hint="Costo"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMarca" />
+
+    <Switch
+        android:id="@+id/swmatricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="252dp"
+        android:layout_marginBottom="63dp"
+        android:text="Matriculado"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCosto" />
+        <!--app:layout_constraintEnd_toStartOf="@+id/rdcolor"-->
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCosto" />
+
+
+    <Spinner
+        android:id="@+id/spinner_dia"
+        android:layout_width="118dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="140dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_mes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swmatricula" />
+
+    <Spinner
+        android:id="@+id/spinner_mes"
+        android:layout_width="129dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="46dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_ano"
+        app:layout_constraintStart_toEndOf="@+id/spinner_dia"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_ano"
+        app:layout_constraintVertical_bias="0.0" />
+        <!--app:layout_constraintTop_toBottomOf="@+id/rdcolor" />-->
+
+    <Spinner
+        android:id="@+id/spinner_ano"
+        android:layout_width="129dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner_dia"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_color" />
+        <!--app:layout_constraintTop_toBottomOf="@+id/rdcolor" />-->
+
+    <Spinner
+        android:id="@+id/spinner_color"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_ano"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swmatricula" />
+
+
+    <!--<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rdcolor"
+        android:layout_width="103dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_ano"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/swmatricula"
+        app:layout_constraintTop_toBottomOf="@+id/txtCosto">
+
+        <RadioButton
+            android:id="@+id/rdnegro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Negro" />
+
+        <RadioButton
+            android:id="@+id/rdblanco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blanco" />
+
+        <RadioButton
+            android:id="@+id/rdazul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Azul" />
+
+        <RadioButton
+            android:id="@+id/rdotro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Otro" />
+    </RadioGroup>-->
+
+</android.support.constraint.ConstraintLayout>
