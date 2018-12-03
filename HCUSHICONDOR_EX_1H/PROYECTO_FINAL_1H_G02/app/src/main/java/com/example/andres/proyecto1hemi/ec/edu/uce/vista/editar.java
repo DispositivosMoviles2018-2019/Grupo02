@@ -118,7 +118,7 @@ Date fecha;
 
                 String valideplaca = "[A-Z]{3}" +
                         "\\-" +
-                        "[0-9]{3}"+"[2,4,6,8]";
+                        "[0-9]{3}"+"[0,2,4,6,8]{1}";
                 String placa = Placa.getText().toString();
                 Matcher matcher = Pattern.compile(valideplaca).matcher(placa);
 
@@ -155,7 +155,7 @@ Date fecha;
                             {
                                 Toast.makeText(this, "Campo Costo Vacio", Toast.LENGTH_LONG).show();
                             } else {
-                                if (color.getCheckedRadioButtonId() == -1) {
+                                if ((Rojo.isChecked()==FALSE)&&(Plomo.isChecked()==FALSE)&&(Azul.isChecked()==FALSE)&&(Verde.isChecked()==FALSE)) {
                                     Toast.makeText(this, "Campo Color Vacio", Toast.LENGTH_LONG).show();
                                 } else {
                                     if (matcher.matches()) {
@@ -163,15 +163,15 @@ Date fecha;
                                         if (matcher2.matches()) {
 
                                             Vehiculo vehiculo = new Vehiculo();
-                                            int opcion = color.getCheckedRadioButtonId();
-                                            if ( Rojo.isSelected()) {
+
+                                            if ( Rojo.isChecked()) {
                                                 ncolor = "Rojo";
-                                            } else if (Plomo.isSelected()) {
+                                            } else if (Plomo.isChecked()) {
                                                 ncolor = "Plomo";
-                                            } else if ( Azul.isSelected()) {
+                                            } else if ( Azul.isChecked()) {
 
                                                 ncolor = "Azul";
-                                            }else if(Verde.isSelected()){
+                                            }else if(Verde.isChecked()){
                                                 ncolor = "Verde";
                                             }
                                             Boolean estado;
