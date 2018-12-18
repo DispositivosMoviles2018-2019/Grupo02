@@ -39,24 +39,27 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-        path = new File(Environment.getExternalStorageDirectory(),
-                "myRecording.mp3");
+
 
     }
-    public void Recorder(View view){
+    public void recorderM(View view){
         if(recorder==null){
             archivoSalida=Environment.getExternalStorageDirectory().getAbsolutePath()+"/grabacion.mp3";
             recorder= new MediaRecorder();
             recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            //formato de salida
             recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+            //codifica el archivo
             recorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+            //carga en el archivosalida
             recorder.setOutputFile(archivoSalida);
             try{
                 recorder.prepare();
                 recorder.start();
             }catch (IOException e){
-
+                System.out.println(e);
             }
+            //
             rec.setBackgroundResource(R.drawable.rec);
             Toast.makeText(getApplicationContext(),"Grabando...",Toast.LENGTH_SHORT).show();
         }else if(recorder!=null){
